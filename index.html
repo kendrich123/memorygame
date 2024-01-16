@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Memory</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #reminder-text {
+            display: block; /* Initially visible */
+            color: #000000; 
+            text-align: center;
+            
+        }
+        #reminder-text.hidden {
+            display: none; /* Hide when the "hidden" class is applied */
+        }
+    </style>
+</head>
+<body>
+    <div id="reminder-text">
+        <h1>CHOOSE A LEVEL OF DIFFICULTY BEFORE CLICKING THE START BUTTON</h1>
+        <h1>WELCOME TO MEMORY CARD GAME! EXERCISE YOUR MEMORY BY FLIPPING CARDS TO REVEAL PAIRS. MATCH ALL THE CARDS TO WIN. REMEMBER THEIR POSITIONS AND CONQUER THE CHALLENGE! GOOD LUCK!</h1>
+        
+
+    </div>
+
+    <div class="game">
+        <div class="controls">
+            <div>
+                <label for="difficulty">Select Difficulty</label>
+                <select id="difficulty">
+                    <option value="4"selected>EASY</option>
+                    <option value="6" >MEDUIM</option>
+                    <option value="8">HARD</option>
+                </select>
+            </div>
+            <button class="start-btn">Start</button>
+            <button class="play-again-btn" style="display: none;">Play Again</button>
+            <div class="stats">
+                <div class="moves">0 moves</div>
+                <div class="timer">Time: 0 sec</div>
+            </div>
+        </div>
+        <div class="board-container">
+            <div class="board" data-dimension="5"></div>
+            <div class="win">You won!</div>
+        </div>
+    </div>
+
+    <!-- Add an img element for the confetti GIF -->
+    <img src="confetti.gif" alt="Confetti" class="confetti-gif" style="display: none">
+        
+    <audio id="success" src="success.mp3" preload="auto"></audio>
+    <audio id="fail" src="fail.mp3" preload="auto"></audio>
+    <audio id="winner" src="winner.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
